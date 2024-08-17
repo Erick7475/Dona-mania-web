@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona Manía - Inicio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Estilos para la barra de navegación */
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centra el contenido de la barra */
+            align-items: center;
+            background: #442202;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            gap: 20px; /* Espacio entre el botón del menú y el texto */
+        }
+
+        .navbar .menu-button {
+            position: absolute;
+            left: 20px;
+            background: #6b3604;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1001;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+            text-align: center;
+            color: white; /* Color blanco para el texto de la barra de navegación */
+        }
+
+        .navbar .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background: rgb(105, 80, 56);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(107, 58, 1, 0.692);
+            width: 150px;
+            z-index: 1001;
+        }
+
+        .navbar .menu.show {
+            display: block;
+        }
+
+        .navbar .menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white; /* Color blanco para los enlaces del menú */
+        }
+
+        .navbar .menu a:hover {
+            background: #ffffff;
+            color: #000; /* Color negro para el texto del enlace al pasar el ratón */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Ajustado para el espacio de la barra de navegación */
+            background: linear-gradient(45deg, #a57a60, #aa792f, #463015); /* Gradiente de colores café de más claro a oscuro */
+            background-size: 600% 600%;
+            animation: gradientAnimation 10s ease infinite;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(238, 175, 59, 0.918);
+            background: #3c2a1b; /* Fondo uniforme café oscuro para toda la tarjeta */
+            max-width: 100%;
+            width: 100%;
+            max-width: 800px;
+            height: auto; /* Ajuste automático de altura */
+            align-items: center;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .card-image {
+            flex-shrink: 0;
+            width: 30%; /* Tamaño reducido para la imagen */
+            height: auto;
+            object-fit: contain; /* Ajusta la imagen para ser visible completamente */
+        }
+
+        .card-content {
+            width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white; /* Color blanco para el texto de la tarjeta */
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .card-content h1 {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar h1 {
+                font-size: 18px;
+            }
+
+            .navbar .menu-button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .card {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .card-image {
+                width: 100%;
+                max-height: 150px; /* Ajuste del tamaño máximo de la imagen en pantallas pequeñas */
+            }
+
+            .card-content {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .card-content h3 {
+                font-size: 20px;
+            }
+
+            .card-content h1 {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .navbar h1 {
+                font-size: 16px;
+            }
+
+            .navbar .menu-button {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            .navbar .menu {
+                width: 120px;
+            }
+
+            .card-content h3 {
+                font-size: 18px;
+            }
+
+            .card-content h1 {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="menu-button" onclick="toggleMenu()">Menú</button>
+        <h1>Dona Manía</h1>
+        <div class="menu" id="menu">
+            <a href="inicio.html">Inicio</a>
+            <a href="https://www.instagram.com/donamania.g2/profilecard/?igsh=Zm1vZHh4NHhjMTJt">Instagram</a>
+            <a href="quienessomos.html">¿Quiénes Somos?</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="index.html">Galería</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <img src="donaescudo.PNG" alt="Descripción de la imagen" class="card-image">
+            <div class="card-content">
+                <h3>Dona Manía</h3>
+                <h1>En este plan de negocios presentamos el proyecto de inversión de la empresa Donamanía S.A de C.V en el cual está implícito nuestro análisis de la situación de la empresa y posibilidades en la formación económica de manera correcta y llevar a cabo el objetivo de nuestro plan.</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

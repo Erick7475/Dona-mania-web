@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donamania</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #c97800; /* Fondo estático de un solo color */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #886b4c; /* Color café para la barra de navegación */
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(90, 55, 9, 0.911);
+            z-index: 1000;
+        }
+
+        .navbar .menu-button {
+            background: #7d5a3d; /* Color café oscuro para el botón del menú */
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .navbar .title {
+            font-size: 24px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #7d5a3d; /* Color café oscuro para el menú */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            width: 200px;
+            z-index: 1001;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #8a5e3b; /* Color café claro para el borde inferior */
+        }
+
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .menu a:hover {
+            background: #8a5e3b; /* Color café claro para el hover */
+        }
+
+        .container {
+            margin-top: 60px; /* Ajuste para el espacio de la barra de navegación */
+            max-width: 800px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section {
+            background: #5b3a29; /* Café oscuro para cada sección */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(116, 115, 55, 0.747);
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="menu-button" onclick="toggleMenu()">Menú</button>
+        <div class="title">¿Quiénes somos?</div>
+        <div class="menu" id="menu">
+            <a href="inicio.html">Inicio</a>
+            <a href="https://www.instagram.com/donamania.g2/profilecard/?igsh=Zm1vZHh4NHhjMTJt">Instagram</a>
+            <a href="quienessomos.html">¿Quiénes somos?</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="index.html">Galería</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h1>Dona Mania</h1>
+            <p>Somos una empresa dedicada a la producción y comercialización de mini donas, brindando una atención y servicio al cliente de forma rápida, oportuna y eficaz, en donde el cliente se sienta satisfecho con nosotros.</p>
+        </div>
+        <div class="section">
+            <h2>Misión</h2>
+            <p>Llegar a ser una empresa que se caracteriza por su excelencia en servicio al cliente, brindándoles nuestro producto que son mini donas para que el cliente se sienta satisfecho con su excelente sabor.</p>
+        </div>
+        <div class="section">
+            <h2>Visión</h2>
+            <p>Llegar a ser una empresa que se caracteriza por su excelencia en servicio al cliente, brindándoles nuestro producto que son mini donas para que el cliente se sienta satisfecho con su excelente sabor.</p>
+        </div>
+        <div class="section">
+            <h2>Valores</h2>
+            <p>Calidad, Innovación, Disciplina, Servicio, Honestidad, Transparencia</p>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
